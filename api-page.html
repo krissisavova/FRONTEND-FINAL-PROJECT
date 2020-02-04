@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Quiz-Login-Page</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	
+</head>
+<body class="api-body">
+<div class="api-form">
+	<h2 id="login-h1" style="text-align: center;"> Click to Allow Location </h2>
+	
+	<center><button id="api-btn" onclick="getLocation()"> FIND ME </button> </center> <br>
+	<p id="geoloc"></p>
+
+</div>
+
+<img src="giphy.gif">
+
+<footer class="page-footer" style="background-color: #000000;">
+	<p> © Copyright 2020 All rights reserved <br> Developed by Kristina Savova </p>
+</footer>
+
+<script>
+var geo = document.getElementById("geoloc");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    geo.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  geo.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
